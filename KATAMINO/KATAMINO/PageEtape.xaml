@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KATAMINO.PageEtape"
+             xmlns:local="clr-namespace:KATAMINO"
+             Title="PageEtape"
+             BackgroundColor="#FFC6C6">
+    <ScrollView>
+        <VerticalStackLayout>
+            <local:ViewParam/>
+            <Label
+            Text="Choix de l'étape"
+            FontSize="Header"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            Margin="25"
+            />
+            <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly">
+                <local:ViewButon ButtonText="A" Chelem="1"/>
+                <local:ViewButon ButtonText="B" Chelem="1"/>
+                <local:ViewButon ButtonText="C" Chelem="1"/>
+                <local:ViewButon ButtonText="D" Chelem="1"/>
+                <local:ViewButon ButtonText="E" Chelem="1"/>
+                <local:ViewButon ButtonText="F" Chelem="1"/>
+                <local:ViewButon ButtonText="G" Chelem="1"/>
+            </FlexLayout>
+            <Button Text="Retour" WidthRequest="350" Clicked="OnRetourButtonClicked"  HeightRequest="100" BackgroundColor="Silver" BorderColor="Black" BorderWidth="10"  />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

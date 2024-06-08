@@ -1,0 +1,55 @@
+kind: pipeline
+type: docker
+name: CI_KATAMINO
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
+
+steps:
+  - name: build-class
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - cd KATAMINO/
+      - dotnet restore ClassKatamino
+      - dotnet build ClassKatamino -c Release --no-restore
+
+  - name: build-test
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - cd KATAMINO/
+      - dotnet restore Test_Unitaire
+      - dotnet build Test_Unitaire -c Release --no-restore
+    depend_on: [build-console]
+
+  - name: build-console
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - cd KATAMINO/
+      - dotnet restore ConsoleApp
+      - dotnet build ConsoleApp -c Release --no-restore
+    depend_on: [build-class]
+
+  - name: code-inspection
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet8
+    secrets: [ SECRET_SONAR_LOGIN ]
+    settings:
+      sonar_host: https://codefirst.iut.uca.fr/sonar/
+      sonar_token:
+        from_secret: SECRET_SONAR_LOGIN
+    commands:
+      - cd KATAMINO/
+      - dotnet restore ClassKatamino
+      - dotnet restore Test_Unitaire
+      - dotnet restore ConsoleApp
+      - dotnet sonarscanner begin /k:KATAMINO /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="Tests/**" /d:sonar.login=$${PLUGIN_SONAR_TOKEN} 
+      - dotnet build ClassKatamino -c Release --no-restore
+      - dotnet build Test_Unitaire -c Release --no-restore
+      - dotnet build ConsoleApp -c Release --no-restore
+      - dotnet test Test_Unitaire --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
+      - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
+      - dotnet publish Test_Unitaire -c Release --no-restore -o CI_PROJECT_DIR/build/release
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+    depend_on: [build-test]

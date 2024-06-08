@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KATAMINO.GrandChelem"
+             xmlns:local="clr-namespace:KATAMINO"
+             BackgroundColor="#FFC6C6"
+             Title="GrandChelem">
+    <ScrollView>
+        <VerticalStackLayout>
+            <local:ViewParam/>
+            <Label
+        Text="Choix de l'étape"
+        FontSize="Header"
+        HorizontalOptions="Center"
+        TextColor="Black"
+        Margin="25"
+        />
+            <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly">
+                <local:ViewButon ButtonText="A" Chelem="2"/>
+                <local:ViewButon ButtonText="B" Chelem="2"/>
+                <local:ViewButon ButtonText="C" Chelem="2"/>
+                <local:ViewButon ButtonText="D" Chelem="2"/>
+                <local:ViewButon ButtonText="E" Chelem="2"/>
+                <local:ViewButon ButtonText="F" Chelem="2"/>
+                <local:ViewButon ButtonText="G" Chelem="2"/>
+                <local:ViewButon ButtonText="H" Chelem="2"/>
+                <local:ViewButon ButtonText="I" Chelem="2"/>
+                <local:ViewButon ButtonText="J" Chelem="2"/>
+                <local:ViewButon ButtonText="K" Chelem="2"/>
+                <local:ViewButon ButtonText="L" Chelem="2"/>
+                <local:ViewButon ButtonText="M" Chelem="2"/>
+                <local:ViewButon ButtonText="N" Chelem="2"/>
+                <local:ViewButon ButtonText="O" Chelem="2"/>
+                <local:ViewButon ButtonText="P" Chelem="2"/>
+                <local:ViewButon ButtonText="Q" Chelem="2"/>
+                <local:ViewButon ButtonText="R" Chelem="2"/>
+                <local:ViewButon ButtonText="S" Chelem="2"/>
+                <local:ViewButon ButtonText="T" Chelem="2"/>
+                <local:ViewButon ButtonText="U" Chelem="2"/>
+                <local:ViewButon ButtonText="V" Chelem="2"/>
+                <local:ViewButon ButtonText="W" Chelem="2"/>
+                <local:ViewButon ButtonText="X" Chelem="2"/>
+                <local:ViewButon ButtonText="Y" Chelem="2"/>
+                <local:ViewButon ButtonText="Z" Chelem="2"/>
+            </FlexLayout>
+            <Button Text="Retour" Clicked="OnRetourButtonClicked" WidthRequest="350" HeightRequest="100" BackgroundColor="Silver" BorderColor="Black" BorderWidth="10" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

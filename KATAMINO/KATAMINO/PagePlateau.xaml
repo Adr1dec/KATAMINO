@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KATAMINO.PagePlateau"
+             xmlns:local="clr-namespace:KATAMINO">
+
+    <ScrollView BackgroundColor="#FFC6C6">
+        <Grid RowDefinitions="*,*,150">
+            <Grid ColumnDefinitions="*,auto,*" RowDefinitions="100,*,*" Grid.Row="0">
+                <Grid ColumnDefinitions="60,60,60,60,60,60,60,60,60,60,60,60" RowDefinitions="60,60,60,60,60" Grid.Column="1" Grid.Row="1" x:Name="PlateauGrid" >
+                </Grid>
+            </Grid>
+            <Grid ColumnDefinitions="*,*,*,*" Grid.Row="1">
+                <Button Text="Pivoter"
+                    Margin="10" 
+                    WidthRequest="200" 
+                    HeightRequest="50" 
+                    BackgroundColor="Silver" 
+                    BorderColor="Black" 
+                    BorderWidth="5" 
+                    Grid.Column="0"
+                    Clicked="OnPivoterButtonClicked"/>
+                <Button Text="Miroiter"
+                    Margin="10" 
+                    WidthRequest="200" 
+                    HeightRequest="50" 
+                    BackgroundColor="Silver" 
+                    BorderColor="Black" 
+                    BorderWidth="5" 
+                    Grid.Column="1"
+                    Clicked="OnMiroiterButtonClicked"/>
+                <Button Text="Enlever"
+                    Margin="10" 
+                    WidthRequest="200" 
+                    HeightRequest="50" 
+                    BackgroundColor="Silver" 
+                    BorderColor="Black" 
+                    BorderWidth="5" 
+                    Grid.Column="2" 
+                    Clicked="OnEnleverButtonClicked"/> 
+                <Button Text="Placer"
+                    Margin="10" 
+                    WidthRequest="200" 
+                    HeightRequest="50" 
+                    BackgroundColor="Silver" 
+                    BorderColor="Black" 
+                    BorderWidth="5" 
+                    Grid.Column="3"
+                    Clicked="OnPlacerButtonClicked"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*" RowDefinitions="150" Grid.Row="2" x:Name=" GridPiece">
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

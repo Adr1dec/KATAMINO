@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+        x:Class="KATAMINO.ModePage"
+        xmlns:local="clr-namespace:KATAMINO"
+        Title="ModePage"
+        BackgroundColor="#FFC6C6">
+    
+    <ScrollView>
+    <VerticalStackLayout Margin="30">
+        <toolkit:MediaElement
+            x:Name="mediaElement"
+            Source="embed://music.mp3"
+            ShouldAutoPlay="True"
+            ShouldShowPlaybackControls="False"
+            />
+        <local:ViewParam/>
+        <Label
+            Margin="20"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="Header"
+            Text="Mode De Jeu"
+            VerticalOptions="Fill"/>
+        <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" Margin="100">
+            <Button
+                Margin="10"
+                WidthRequest="500"
+                HeightRequest="300"
+                BackgroundColor="Purple"
+                Text="PETIT CHELEM"
+                TextColor="#FFC6C6"
+                FontSize="Large"
+                VerticalOptions="Fill"
+                Clicked="OnPetitButtonClicked"/>
+            <Button
+                Margin="10"
+                WidthRequest="500"
+                HeightRequest="300"
+                BackgroundColor="Purple"
+                Text="GRAND CHELEM"
+                TextColor="#FFC6C6"
+                FontSize="Large"
+                VerticalOptions="Fill"
+                Clicked="OnGrandButtonClicked"/>
+        </FlexLayout>
+        <Button
+            Margin="10"
+            WidthRequest="200"
+            HeightRequest="100"
+            BackgroundColor="DarkOrange"
+            HorizontalOptions="Center"
+            FontSize="Medium"
+            TextColor="#FFC6C6"
+            Text="RETOUR"
+            Clicked="OnRetourButtonClicked"
+            />
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

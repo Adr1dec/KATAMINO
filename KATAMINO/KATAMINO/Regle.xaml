@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KATAMINO.Regle"
+             Title="Regle"
+             BackgroundColor="#FFC6C6">
+    <ScrollView>
+    <VerticalStackLayout>
+            <ImageButton Source="retour.png" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Margin="20" Clicked="OnRetourButtonClicked"/>
+            <Label Text="Règle du jeu" FontSize="40" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+            <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+                <Label Text="Matériel" FontSize="20" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="- 12 Pentaminos" FontSize="15" Grid.Column="1" Grid.Row="3" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Image Source="pentominos.png" Grid.Column="2" Grid.Row="4"></Image>
+                <Label Text="- 1 reglette" FontSize="15" Grid.Column="1" Grid.Row="5" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Image Source="reglette.png" Grid.Column="2" Grid.Row="6" WidthRequest="70"></Image>
+                <Label Text="- 1 plateau" FontSize="15" Grid.Column="1" Grid.Row="7" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Image Source="plateau.png" Grid.Column="2" Grid.Row="8" WidthRequest="280"></Image>
+                <Label Text="Lexique" FontSize="20" Grid.Column="2" Grid.Row="9" HorizontalOptions="Center" TextColor="Black" Margin="20"/>
+                <Label Text="Un Pentamino est une pièce du jeu, plus précisément une figure formée de 5 carrés juxtaposés ayant au moins un côté commun.
+Un penta est un ensemble de pentaminos qui remplit parfaitement la zone de jeu délimitée par la réglette. Penta4 est constitué de 4 pentaminos juxtaposés. Penta5 de 5, etc" FontSize="15" Grid.Column="2" Grid.Row="10" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Règle du jeu" FontSize="20" Grid.Column="2" Grid.Row="11" HorizontalOptions="Center" TextColor="Black" Margin="20"/>
+                <Label Text="A) Petit Chelem :" FontSize="15" Grid.Column="1" Grid.Row="12" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Choisissez un niveau (a,b,c,...) ou le mode aléatoire." FontSize="15" Grid.Column="2" Grid.Row="12" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Pour commencer la réglette sera positionnée sur le cran 3. " FontSize="15" Grid.Column="2" Grid.Row="13" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Pour continuer les 3 pentaminos seront à placer sur le tableau grille dans la colonne penta3. " FontSize="15" Grid.Column="2" Grid.Row="14" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Puis, si vous avez réussi le penta3 la réglette va se déplacer d’un cran jusqu’à terminer le penta8. " FontSize="15" Grid.Column="2" Grid.Row="15" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Bravo vous avez réussi un niveau, une fois que vous avez réussi tous les niveaux, essayez de vous attaquer au grand chelem." FontSize="15" Grid.Column="2" Grid.Row="16" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="B) Le Grand Chelem :" FontSize="15" Grid.Column="1" Grid.Row="17" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Label Text="Le grand chelem possède les mêmes règles que le petit chelem or, la réglette se positionne d'abord sur le cran 3 puis évolue jusqu'au cran 9 pour les niveaux les plus complexes." FontSize="15" Grid.Column="2" Grid.Row="17" HorizontalOptions="Center" TextColor="Black" Margin="10"/>
+                <Image Source="petitchelem.png" Grid.Column="1" Grid.Row="18"></Image>
+                <Image Source="grandchelem.png" Grid.Column="3" Grid.Row="18" WidthRequest="250"></Image>
+                
+                
+            </Grid>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
